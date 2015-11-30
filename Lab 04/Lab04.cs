@@ -13,9 +13,9 @@ namespace GameEngine.Labs
         SpriteBatch spriteBatch;
 
         Model model;
-        Transform parentTransform;
-        Transform childTransform;
-        Transform cameraTransform;
+        GameObject parentObject;
+        GameObject childObject;
+        GameObject cameraObject;
         Camera camera;
 
         public Lab04()
@@ -29,6 +29,7 @@ namespace GameEngine.Labs
         {
             Time.Initialize();
             Input.Initialize();
+            Screen.Initialize(graphics);
             base.Initialize();
         }
 
@@ -40,15 +41,17 @@ namespace GameEngine.Labs
             // Ask our model to do "default" lighting"
             foreach (ModelMesh mesh in model.Meshes)
                 foreach (BasicEffect effect in mesh.Effects)
+                {
                     effect.EnableDefaultLighting();
-            parentTransform = new Transform();
-            childTransform = new Transform();
-            childTransform.Parent = parentTransform;
-            childTransform.LocalPosition = Vector3.Right * 10;
-            cameraTransform = new Transform();
-            cameraTransform.LocalPosition = Vector3.Backward * 50;
-            camera = new Camera();
-            //camera.Transform = cameraTransform;
+                    effect.Alpha = 1;
+                }
+            parentObject = new GameObject();
+            childObject = new GameObject();
+            childObject.Transform.Parent = parentObject.Transform;
+            childObject.Transform.LocalPosition = Vector3.Right * 10;
+            cameraObject = new GameObject();
+            cameraObject.Transform.LocalPosition = Vector3.Backward * 50;
+            camera = cameraObject.Add<Camera>();
         }
 
         protected override void Update(GameTime gameTime)
@@ -59,52 +62,52 @@ namespace GameEngine.Labs
                 Exit();
 
             // Keep rotating my child object
-            childTransform.Rotate(Vector3.Right, Time.ElapsedGameTime);
+            childObject.Transform.Rotate(Vector3.Right, Time.ElapsedGameTime);
             // Scale the parent if Shift+Up/Down is pressed
             if (Input.IsKeyDown(Keys.LeftShift))
             {
                 if (Input.IsKeyDown(Keys.Up))
-                    parentTransform.LocalScale += Vector3.One * Time.ElapsedGameTime;
+                    parentObject.Transform.LocalScale += Vector3.One * Time.ElapsedGameTime;
                 if (Input.IsKeyDown(Keys.Down))
-                    parentTransform.LocalScale -= Vector3.One * Time.ElapsedGameTime;
+                    parentObject.Transform.LocalScale -= Vector3.One * Time.ElapsedGameTime;
             }
             else if (Input.IsKeyDown(Keys.LeftControl))
             {
                 if (Input.IsKeyDown(Keys.Right))
-                    parentTransform.Rotate(Vector3.Forward, Time.ElapsedGameTime * 5);
+                    parentObject.Transform.Rotate(Vector3.Forward, Time.ElapsedGameTime * 5);
                 if (Input.IsKeyDown(Keys.Left))
-                    parentTransform.Rotate(Vector3.Backward, Time.ElapsedGameTime * 5);
+                    parentObject.Transform.Rotate(Vector3.Backward, Time.ElapsedGameTime * 5);
                 if (Input.IsKeyDown(Keys.Up))
-                    parentTransform.Rotate(Vector3.Right, Time.ElapsedGameTime * 5);
+                    parentObject.Transform.Rotate(Vector3.Right, Time.ElapsedGameTime * 5);
                 if (Input.IsKeyDown(Keys.Down))
-                    parentTransform.Rotate(Vector3.Left, Time.ElapsedGameTime * 5);
+                    parentObject.Transform.Rotate(Vector3.Left, Time.ElapsedGameTime * 5);
             }
             // Otherwise, move the parent with respect to its axes
             else
             {
                 if (Input.IsKeyDown(Keys.Right))
-                    parentTransform.LocalPosition += parentTransform.Right * Time.ElapsedGameTime;
+                    parentObject.Transform.LocalPosition += parentObject.Transform.Right * Time.ElapsedGameTime;
                 if (Input.IsKeyDown(Keys.Left))
-                    parentTransform.LocalPosition += parentTransform.Left * Time.ElapsedGameTime;
+                    parentObject.Transform.LocalPosition += parentObject.Transform.Left * Time.ElapsedGameTime;
                 if (Input.IsKeyDown(Keys.Up))
-                    parentTransform.LocalPosition += parentTransform.Up * Time.ElapsedGameTime;
+                    parentObject.Transform.LocalPosition += parentObject.Transform.Up * Time.ElapsedGameTime;
                 if (Input.IsKeyDown(Keys.Down))
-                    parentTransform.LocalPosition += parentTransform.Down * Time.ElapsedGameTime;
+                    parentObject.Transform.LocalPosition += parentObject.Transform.Down * Time.ElapsedGameTime;
             }
 
             // Control the camera
             if (Input.IsKeyDown(Keys.W)) // move forward
-                cameraTransform.LocalPosition += cameraTransform.Forward * Time.ElapsedGameTime * 5;
+                cameraObject.Transform.LocalPosition += cameraObject.Transform.Forward * Time.ElapsedGameTime * 5;
             if (Input.IsKeyDown(Keys.S)) // move backwars
-                cameraTransform.LocalPosition += cameraTransform.Backward * Time.ElapsedGameTime * 5;
+                cameraObject.Transform.LocalPosition += cameraObject.Transform.Backward * Time.ElapsedGameTime * 5;
             if (Input.IsKeyDown(Keys.A)) // rotate left
-                cameraTransform.Rotate(Vector3.Up, Time.ElapsedGameTime);
+                cameraObject.Transform.Rotate(Vector3.Up, Time.ElapsedGameTime);
             if (Input.IsKeyDown(Keys.D)) // rotate right
-                cameraTransform.Rotate(Vector3.Down, Time.ElapsedGameTime);
+                cameraObject.Transform.Rotate(Vector3.Down, Time.ElapsedGameTime);
             if (Input.IsKeyDown(Keys.Q)) // look up
-                cameraTransform.Rotate(Vector3.Right, Time.ElapsedGameTime);
+                cameraObject.Transform.Rotate(Vector3.Right, Time.ElapsedGameTime);
             if (Input.IsKeyDown(Keys.E)) // look down
-                cameraTransform.Rotate(Vector3.Left, Time.ElapsedGameTime);
+                cameraObject.Transform.Rotate(Vector3.Left, Time.ElapsedGameTime);
 
             base.Update(gameTime);
         }
@@ -115,12 +118,12 @@ namespace GameEngine.Labs
             GraphicsDevice.DepthStencilState = new DepthStencilState();
             Matrix view = camera.View;
             Matrix projection = camera.Projection;
-            model.Draw(parentTransform.World, view, projection);
-            model.Draw(childTransform.World, view, projection);
+            model.Draw(parentObject.Transform.World, view, projection);
+            model.Draw(childObject.Transform.World, view, projection);
 
-            spriteBatch.Begin();
+            //spriteBatch.Begin();
             // Any 2D stuff goes here!
-            spriteBatch.End();
+            //spriteBatch.End();
             base.Draw(gameTime);
         }
     }

@@ -63,8 +63,6 @@ namespace GameEngine
         {
             get
             {
-                if (Transform == null)
-                    return Matrix.Identity;
                 return Matrix.CreateLookAt(Transform.Position,
                         Transform.Position + Transform.Forward,
                         Transform.Up);

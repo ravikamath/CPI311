@@ -14,26 +14,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Content", "Content\Content.csproj", "{5F0CC4AF-653E-437C-8AC8-E8D78723C07A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab 01", "Lab 01\Lab 01.csproj", "{63624E7C-F677-4056-9651-30D6E11E7531}"
-	ProjectSection(ProjectDependencies) = postProject
-		{5F0CC4AF-653E-437C-8AC8-E8D78723C07A} = {5F0CC4AF-653E-437C-8AC8-E8D78723C07A}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows", "Windows\Windows.csproj", "{E199E347-0AA2-4E5F-9920-49FE5B7F9DF7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab 02", "Lab 02\Lab 02.csproj", "{04DFD2CD-57BA-451B-8EDC-D0254C916406}"
-	ProjectSection(ProjectDependencies) = postProject
-		{5F0CC4AF-653E-437C-8AC8-E8D78723C07A} = {5F0CC4AF-653E-437C-8AC8-E8D78723C07A}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab 03", "Lab 03\Lab 03.csproj", "{BA5CFDD7-6D7A-46AD-BCB6-64471E2CC087}"
-	ProjectSection(ProjectDependencies) = postProject
-		{5F0CC4AF-653E-437C-8AC8-E8D78723C07A} = {5F0CC4AF-653E-437C-8AC8-E8D78723C07A}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab 04", "Lab 04\Lab 04.csproj", "{92139657-F4AD-49FB-93CF-58FFD84ACC28}"
-	ProjectSection(ProjectDependencies) = postProject
-		{5F0CC4AF-653E-437C-8AC8-E8D78723C07A} = {5F0CC4AF-653E-437C-8AC8-E8D78723C07A}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Form Test", "Form Test\Form Test.csproj", "{FB3B333C-9B73-423A-AF91-99810928CF4C}"
 EndProject
