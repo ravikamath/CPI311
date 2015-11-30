@@ -44,14 +44,14 @@ namespace GameEngine
             set
             {
                 // Failsafe check - do not allow loops
-                Transform copy = this;
-                while (copy != null && copy != value) copy = copy.parent;
+                Transform copy = value;
+                while (copy != null && copy != this) copy = copy.parent;
                 if (copy != null) return;
                 // If there is a parent right now, remove me from that list
                 if (parent != null)
                     parent.Children.Remove(this);
                 parent = value;
-                // If I do have a parent, add me me to it
+                // If I do have a parent, add me to it's list
                 if (parent != null)
                     parent.Children.Add(this);
                 Update();
