@@ -24,6 +24,9 @@ namespace GameEngine
         {
             Transform = new Transform();
             Components = new Dictionary<Type, Component>();
+            Updateables = new List<IUpdateable>();
+            Renderables = new List<IRenderable>();
+            Drawables = new List<IDrawable>();
         }
 
         public T Add<T>() where T : Component, new()

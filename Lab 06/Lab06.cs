@@ -12,7 +12,6 @@ namespace GameEngine.Labs
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        SpriteFont font;
         Model model;
         Random random;
 
@@ -45,7 +44,6 @@ namespace GameEngine.Labs
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            font = Content.Load<SpriteFont>("Fonts/Arial");
             model = Content.Load<Model>("Models/Sphere");
             foreach (ModelMesh mesh in model.Meshes)
                 foreach (BasicEffect effect in mesh.Effects)
@@ -73,8 +71,8 @@ namespace GameEngine.Labs
 
             if (Input.IsKeyPressed(Keys.Space))
                 AddSphere();
-            foreach (Rigidbody rigidbody in rigidbodies)
-                rigidbody.Update();
+            foreach (GameObject gameObject in objects)
+                gameObject.Update();
             Vector3 normal;
             for (int i = 0; i < colliders.Count; i++)
             {
@@ -120,7 +118,7 @@ namespace GameEngine.Labs
         {
             GameObject gameObject = new GameObject();
             Rigidbody rigidbody = gameObject.Add<Rigidbody>();
-            rigidbody.Mass = 1; // Lab 7: random mass
+            rigidbody.Mass = 1;
             //rigidbody.Acceleration = Vector3.Down * 9.81f;
             //rigidbody.Velocity = new Vector3((float)random.NextDouble() * 5, (float)random.NextDouble() * 5, (float)random.NextDouble() * 5);
             Vector3 direction = new Vector3((float)random.NextDouble(), (float)random.NextDouble(), (float)random.NextDouble());
