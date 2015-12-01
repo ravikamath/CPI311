@@ -125,7 +125,7 @@ namespace GameEngine.Labs
             direction.Normalize();
             rigidbody.Velocity = direction * ((float)random.NextDouble() * 5 + 5);
             SphereCollider sphereCollider = gameObject.Add<SphereCollider>();
-            sphereCollider.Radius = 2.5f * gameObject.Transform.LocalScale.Y;
+            sphereCollider.Radius = gameObject.Transform.LocalScale.Y;
             objects.Add(gameObject);
             colliders.Add(sphereCollider);
             rigidbodies.Add(rigidbody);
