@@ -27,6 +27,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Form Test", "Form Test\Form
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab 05", "Lab 05\Lab 05.csproj", "{93B67DC6-429F-43F4-9854-82FFDCDAE148}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab 06", "Lab 06\Lab 06.csproj", "{F5B9978E-D150-4367-BCEE-EDAF069096BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab 07", "Lab 07\Lab 07.csproj", "{DBD9BF3E-2700-45B8-85A7-9A9C6A3A1121}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab 08", "Lab 08\Lab 08.csproj", "{DD488918-6253-4692-BE76-C35CAFB7AA90}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +103,24 @@ Global
 		{93B67DC6-429F-43F4-9854-82FFDCDAE148}.Release|Any CPU.ActiveCfg = Release|x86
 		{93B67DC6-429F-43F4-9854-82FFDCDAE148}.Release|x86.ActiveCfg = Release|x86
 		{93B67DC6-429F-43F4-9854-82FFDCDAE148}.Release|x86.Build.0 = Release|x86
+		{F5B9978E-D150-4367-BCEE-EDAF069096BA}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{F5B9978E-D150-4367-BCEE-EDAF069096BA}.Debug|x86.ActiveCfg = Debug|x86
+		{F5B9978E-D150-4367-BCEE-EDAF069096BA}.Debug|x86.Build.0 = Debug|x86
+		{F5B9978E-D150-4367-BCEE-EDAF069096BA}.Release|Any CPU.ActiveCfg = Release|x86
+		{F5B9978E-D150-4367-BCEE-EDAF069096BA}.Release|x86.ActiveCfg = Release|x86
+		{F5B9978E-D150-4367-BCEE-EDAF069096BA}.Release|x86.Build.0 = Release|x86
+		{DBD9BF3E-2700-45B8-85A7-9A9C6A3A1121}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{DBD9BF3E-2700-45B8-85A7-9A9C6A3A1121}.Debug|x86.ActiveCfg = Debug|x86
+		{DBD9BF3E-2700-45B8-85A7-9A9C6A3A1121}.Debug|x86.Build.0 = Debug|x86
+		{DBD9BF3E-2700-45B8-85A7-9A9C6A3A1121}.Release|Any CPU.ActiveCfg = Release|x86
+		{DBD9BF3E-2700-45B8-85A7-9A9C6A3A1121}.Release|x86.ActiveCfg = Release|x86
+		{DBD9BF3E-2700-45B8-85A7-9A9C6A3A1121}.Release|x86.Build.0 = Release|x86
+		{DD488918-6253-4692-BE76-C35CAFB7AA90}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{DD488918-6253-4692-BE76-C35CAFB7AA90}.Debug|x86.ActiveCfg = Debug|x86
+		{DD488918-6253-4692-BE76-C35CAFB7AA90}.Debug|x86.Build.0 = Debug|x86
+		{DD488918-6253-4692-BE76-C35CAFB7AA90}.Release|Any CPU.ActiveCfg = Release|x86
+		{DD488918-6253-4692-BE76-C35CAFB7AA90}.Release|x86.ActiveCfg = Release|x86
+		{DD488918-6253-4692-BE76-C35CAFB7AA90}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
