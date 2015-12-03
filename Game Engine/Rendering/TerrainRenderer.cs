@@ -13,8 +13,12 @@ namespace GameEngine
         public Texture2D NormalMap { get; set; }
         Vector2 size;
 
-        public TerrainRenderer(Texture2D heightMap,
-            Vector2 size, Vector2 resolution)
+        public TerrainRenderer()
+        {
+
+        }
+
+        public void Initialize(Texture2D heightMap, Vector2 size, Vector2 resolution)
         {
             this.size = size;
             HeightMap = heightMap;
